@@ -22,7 +22,7 @@ export default function Home(props) {
     e.preventDefault();
     console.log(value)
     const body = value
-    const res = await axios.post(audioApi, {
+    const res = await axios.post(process.env.NEXT_PUBLIC_API, {
       body: value
     });
     let { data } = res;
