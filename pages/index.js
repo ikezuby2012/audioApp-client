@@ -5,7 +5,6 @@ import Link from 'next/link';
 
 import HeaderTop from "../components/HeaderTop";
 import Footer from "../components/footer";
-import { audioApi } from "../components/api";
 
 //icons
 import { PlayArrow, Pause } from "@material-ui/icons";
