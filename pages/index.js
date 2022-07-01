@@ -5,6 +5,7 @@ import Link from "next/link";
 
 import HeaderTop from "../components/HeaderTop";
 import Footer from "../components/footer";
+
 /**this is just for testing purpose */
 // import AudioDefault from "../public/utils/default.mp3";
 
@@ -48,20 +49,6 @@ export default function Home(props) {
          console.log(err.message);
          setLoading(false);
       }
-      // console.log(value)
-      // const body = value
-      // const res = await axios.post(process.env.NEXT_PUBLIC_API, {
-      //   body: value
-      // });
-      // let { data } = res;
-      // console.log(data.data);
-      // if (data) {
-      //   console.log(data.data.url);
-      //   setAudio(true);
-      //   setResObj(data.data);
-      //   setAudioSrc(JSON.stringify(data.data.url));
-      // }
-      // console.log(resObj);
    };
 
    const play = () => {
@@ -90,16 +77,6 @@ export default function Home(props) {
       setSeekValue(
          (audioPlayer.current.currentTime / audioPlayer.current.duration) * 100
       );
-   };
-
-   const playAudio = () => {
-      setPlaying(true);
-      audioPlay.play();
-   };
-
-   const pauseAudio = () => {
-      setPlaying(false);
-      audioPlay.pause();
    };
    return (
       <div className={"container"}>
@@ -138,12 +115,11 @@ export default function Home(props) {
                <div className="audio">
                   <p>
                      <span style={{ fontSize: "14px", color: "white" }}>
-                        here is a link to your audio
+                        here is a link to download your audio
                      </span>
                      <a
                         className="header-icon_link"
                         href={audioSrc}
-                        target="_blank"
                      >
                         <h2 className={"header-icon_txt"}>{audioSrc}</h2>
                      </a>
@@ -193,7 +169,6 @@ export default function Home(props) {
                         </button>
                         <div className="center">
                            <button
-                           // onClick={playing ? onPause : play}
                            >
                               {playing ? (
                                  <Pause
@@ -222,17 +197,6 @@ export default function Home(props) {
                         </button>
                      </div>
                   </>
-                  {/* {playing ?
-            <div>
-              <button onClick={pauseAudio}>
-                <Pause />
-              </button>
-            </div>
-            : <div>
-              <button onClick={playAudio}>
-                <PlayArrow />
-              </button>
-            </div>} */}
                </div>
             )}
          </main>
